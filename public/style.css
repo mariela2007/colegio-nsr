@@ -1,0 +1,102 @@
+body{
+    margin:0;
+    font-family: Arial;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
+    background:#0d3b66;
+    color:white;
+}
+
+.navbar a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    background:url('images/colegio.jpg') center/cover;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.btn{
+    background:#fcbf49;
+    padding:10px 20px;
+    text-decoration:none;
+    color:black;
+    margin-top:10px;
+}
+
+/* ESENCIA */
+.esencia{
+    text-align:center;
+    padding:60px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:#f4f4f4;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* INSTALACIONES */
+.instalaciones{
+    padding:60px;
+    text-align:center;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.item{
+    background:#ddd;
+    padding:40px;
+    border-radius:10px;
+}
+
+/* TESTIMONIOS */
+.testimonios{
+    background:#0d3b66;
+    color:white;
+    padding:60px;
+    text-align:center;
+}
+
+/* CTA */
+.cta{
+    text-align:center;
+    padding:60px;
+    background:#fcbf49;
+}
+
+/* FOOTER */
+.footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.copy{
+    margin-top:20px;
+    font-size:14px;
+}

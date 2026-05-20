@@ -445,20 +445,37 @@
 ========================= */
 .timeline-img {
     width: 45%;
+    background: #fff;
+    padding: 10px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* imagen completa */
 .timeline-img img {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    transition: 0.3s ease;
+    transition: 0.4s ease;
 }
 
-.timeline-img img:hover {
+/* hover */
+.timeline-img:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+.timeline-img:hover img {
     transform: scale(1.03);
 }
+
+
 
 /* =========================
    RESPONSIVE
@@ -619,7 +636,7 @@
         </div>
 
         <div class="timeline-img">
-            <img src="{{ asset('img/historia1.jpg') }}">
+            <img src="{{ asset('imagen/historia1.jpg') }}">
         </div>
     </div>
 
@@ -633,7 +650,7 @@
         </div>
 
         <div class="timeline-img">
-            <img src="{{ asset('img/historia2.jpg') }}">
+            <img src="{{ asset('imagen/historia2.jpg') }}">
         </div>
     </div>
 

@@ -462,7 +462,7 @@
 </div>
         <h2 class="main-title" style="margin-bottom: 0;">Espacios para el Aprendizaje</h2>
         </div>
-        <a href="#" class="view-gallery">Ver Galería Completa <span>→</span></a>
+        <a href="/biblioteca" class="view-gallery">Ver Galería Completa <span>→</span></a>
     </div>
     
     <div class="infra-grid">

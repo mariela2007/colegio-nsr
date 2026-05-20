@@ -26,7 +26,7 @@
 
         /* --- NAVBAR --- */
         .navbar {
-            background: var(--azul-oscuro);
+            background: linear-gradient(135deg, #0d3b66, #08263f);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -51,18 +51,7 @@
     transition: all 0.3s ease;
 }
 
-/* hover (como el menú) */
-.logo:hover img {
-    background: var(--amarillo-transp);
-    border-radius: 10px;
-}
 
-/* active (cuando está seleccionado) */
-.logo:active img {
-    background: var(--amarillo);
-    box-shadow: 0 4px 12px rgba(252, 191, 73, 0.3);
-    border-radius: 10px;
-}
 
         .logo-text {
             color: var(--blanco);
@@ -278,6 +267,7 @@
         <a href="/programas" data-link>Programas</a>
         <a href="/biblioteca" data-link>Noticias y eventos</a>
         <a href="/contacto" data-link>Contacto</a>
+        <a href="/login" data-link>login</a>
     </div>
 </nav>
 

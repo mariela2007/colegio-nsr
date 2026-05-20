@@ -4,22 +4,31 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
+    libzip-dev \
     zip \
     unzip \
     git \
-    curl
+    curl \
+    nodejs \
+    npm
 
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-COPY . /var/www/html
-
 WORKDIR /var/www/html
 
-RUN composer install --no-dev --optimize-autoloader
+COPY . .
 
-RUN chown -R www-data:www-data /var/www/html/storage
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
+
+RUN npm install && npm run build
+
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+RUN a2enmod rewrite
+
+COPY docker/apache.conf /etc/apache2/sites-available/000-default.conf
 
 EXPOSE 80
 

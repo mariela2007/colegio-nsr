@@ -114,10 +114,10 @@ body { margin: 0; }
 ══════════════════════════════ */
 .programa-section {
     padding: 80px 8%;
-    background: #edf2f7;
+    background: var(--c-blue);
 }
 .programa-section.alt {
-    background: #f4f7ff;
+    background: #fcbf49;
 }
 
 /* Flex balanceado 50/50 */
@@ -371,7 +371,7 @@ body { margin: 0; }
             <div class="info-boxes">
                 <div class="info-box">
                     <h4><i class="fa-solid fa-user-group"></i> Información general</h4>
-                    <p><strong>Edades:</strong> 3 a 5 años &nbsp;·&nbsp; <strong>Horario:</strong> 8:00 a.m. – 12:00 p.m. &nbsp;·&nbsp; <strong>Modalidad:</strong> Presencial</p>
+                    <p><strong>Edades:</strong> 3 a 5 años &nbsp;·&nbsp; <strong>Horario:</strong> 7:30 a.m. – 12:30 p.m. &nbsp;·&nbsp; <strong>Modalidad:</strong> Presencial</p>
                 </div>
                 <div class="info-box">
                     <h4><i class="fa-solid fa-book"></i> Áreas de aprendizaje</h4>
@@ -406,7 +406,7 @@ body { margin: 0; }
             <div class="info-boxes">
                 <div class="info-box">
                     <h4><i class="fa-solid fa-user-group"></i> Información general</h4>
-                    <p><strong>Edades:</strong> 6 a 11 años &nbsp;·&nbsp; <strong>Horario:</strong> 7:45 a.m. – 1:30 p.m. &nbsp;·&nbsp; <strong>Modalidad:</strong> Presencial</p>
+                    <p><strong>Edades:</strong> 6 a 11 años &nbsp;·&nbsp; <strong>Horario:</strong> 7:00 a.m. – 1:15 p.m. &nbsp;·&nbsp; <strong>Modalidad:</strong> Presencial</p>
                 </div>
                 <div class="info-box">
                     <h4><i class="fa-solid fa-book"></i> Cursos</h4>
@@ -441,7 +441,7 @@ body { margin: 0; }
             <div class="info-boxes">
                 <div class="info-box">
                     <h4><i class="fa-solid fa-user-group"></i> Información general</h4>
-                    <p><strong>Edades:</strong> 12 a 16 años &nbsp;·&nbsp; <strong>Horario:</strong> 7:30 a.m. – 2:30 p.m. &nbsp;·&nbsp; <strong>Modalidad:</strong> Presencial</p>
+                    <p><strong>Edades:</strong> 12 a 16 años &nbsp;·&nbsp; <strong>Horario:</strong> 7:00 a.m. – 2:00 p.m. &nbsp;·&nbsp; <strong>Modalidad:</strong> Presencial</p>
                 </div>
                 <div class="info-box">
                     <h4><i class="fa-solid fa-book"></i> Cursos</h4>

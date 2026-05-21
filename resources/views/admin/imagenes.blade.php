@@ -53,7 +53,7 @@
         {{-- Imagen actual --}}
         <div style="position:relative; height:200px; background:rgba(0,0,0,0.3);">
             @if($img && $img->imagen)
-                <img src="{{ asset('img-programas/' . $img->imagen) }}"
+                <img src="{{ $img->imagen }}"
                      style="width:100%; height:100%; object-fit:cover; display:block;">
             @else
                 <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; color:var(--text-muted);">

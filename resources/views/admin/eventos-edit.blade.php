@@ -102,7 +102,7 @@
                     <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(110px,1fr)); gap:12px;">
                         @foreach($evento->imagenes as $img)
                         <div style="position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--border-color); aspect-ratio:1/1;">
-                            <img src="{{ asset('meses/' . $img->imagen) }}"
+                            <img src="{{$img->imagen  }}"
                                  style="width:100%; height:100%; object-fit:cover; display:block;">
  
                             {{-- ✅ Botón que dispara el form externo con JS --}}

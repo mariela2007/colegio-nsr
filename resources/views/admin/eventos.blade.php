@@ -161,7 +161,7 @@
             <div style="display:flex; gap:12px; overflow-x:auto; padding-bottom:8px; scrollbar-width:thin;">
                 @foreach($evento->imagenes as $img)
                 <div style="flex-shrink:0;">
-                    <img src="{{ asset('meses/' . $img->imagen) }}"
+                    <img src="{{ $img->imagen }}"
                          style="width:100px; height:100px; object-fit:cover; border-radius:12px; border:1px solid var(--border-color); display:block;">
                 </div>
                 @endforeach

@@ -91,7 +91,7 @@
                         <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 18px; padding: 20px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
                             
                             @if($noticia->imagen)
-                                <img src="{{ asset('noticias/' . $noticia->imagen) }}" alt="Noticia" 
+                                <img src="{{  $noticia->imagen}}" alt="Noticia" 
                                     style="width: 120px; height: 120px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color);">
                             @else
                                 <div style="width: 120px; height: 120px; background: var(--bg-dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--border-color);">

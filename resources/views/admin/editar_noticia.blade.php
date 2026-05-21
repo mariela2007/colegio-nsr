@@ -64,7 +64,7 @@
                     </label>
                     @if($noticia->imagen)
                         <div style="position: relative; border-radius: 16px; overflow: hidden; border: 2px solid var(--border-color);">
-                            <img src="{{ asset('noticias/' . $noticia->imagen) }}"
+                            <img src="{{ $noticia->imagen}}"
                                  alt="Imagen noticia"
                                  style="width: 100%; height: 180px; object-fit: cover; display: block;">
                             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);"></div>

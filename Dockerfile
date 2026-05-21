@@ -12,8 +12,7 @@ RUN apt-get update && apt-get install -y \
     nodejs \
     npm
 
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
-
+RUN apt-get install -y libpq-dev && docker-php-ext-install pdo_mysql pdo_pgsql mbstring exif pcntl bcmath gd zip
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html

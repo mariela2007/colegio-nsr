@@ -169,8 +169,7 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
-
+    'secure' => true,
     /*
     |--------------------------------------------------------------------------
     | HTTP Access Only

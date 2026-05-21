@@ -203,8 +203,13 @@ body { margin: 0; background: #f0f4f8; }
 }
 .card-thumb:hover  { border-color: var(--c-yellow); transform: scale(1.05); }
 .card-thumb.activo { border-color: var(--c-blue); }
-.card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
+.card-thumb img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+    min-height: 52px;
+}
 /* ══════════════════════════════
    NOTICIAS — GRID
 ══════════════════════════════ */
@@ -422,7 +427,7 @@ body { margin: 0; background: #f0f4f8; }
                     @foreach($imgs as $img)
                     <div class="card-thumb {{ $loop->first ? 'activo' : '' }}"
                          onclick="irAFoto({{ $evento->id }}, {{ $loop->index }})">
-                        <img src="{{ asset('meses/' . $img->imagen) }}" alt="">
+                        <img src="{{ $img->imagen }}" alt="">
                     </div>
                     @endforeach
                 </div>

@@ -383,7 +383,7 @@ body { margin: 0; background: #f0f4f8; }
             <div class="card-carrusel" id="carrusel-{{ $evento->id }}">
                 @if($imgs->isNotEmpty())
                     @foreach($imgs as $img)
-                        <img src="{{ asset('meses/' . $img->imagen) }}"
+                        <img src="{{ $img->imagen }}"
                              class="{{ $loop->first ? 'activo' : '' }}"
                              alt="{{ $evento->titulo }}">
                     @endforeach
@@ -449,9 +449,9 @@ body { margin: 0; background: #f0f4f8; }
     <div class="noticias-grid">
         @forelse($noticias ?? [] as $noticia)
         <div class="noticia-card"
-             onclick="abrirModal('{{ asset('noticias/' . $noticia->imagen) }}', '{{ addslashes($noticia->titulo) }}')">
+             onclick="abrirModal('{{ $noticia->imagen }}', '{{ addslashes($noticia->titulo) }}')">
             <div class="noticia-img-wrap">
-                <img src="{{ asset('noticias/' . $noticia->imagen) }}" alt="{{ $noticia->titulo }}">
+                <img src="{{ $noticia->imagen }}" alt="{{ $noticia->titulo }}">
                 <div class="noticia-badge">Comunicado</div>
                 <div class="noticia-overlay">
                     <span><i class="fa-solid fa-eye"></i> &nbsp;Ver más</span>

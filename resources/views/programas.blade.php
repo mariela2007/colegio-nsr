@@ -359,7 +359,7 @@ body { margin: 0; }
 <section id="inicial" class="programa-section">
     <div class="programa-flex">
         <div class="programa-img">
-            <img src="{{ asset('img-programas/' . ($imagenes['inicial']->imagen ?? 'inicial.jpg')) }}" alt="Inicial">
+            <img src="{{ $imagenes['inicial']->imagen ?? asset('imagen/inicial.jpg') }}" alt="Inicial">
             <div class="programa-img-badge">Nivel Inicial</div>
         </div>
         <div class="programa-content">
@@ -394,7 +394,7 @@ body { margin: 0; }
 <section id="primaria" class="programa-section alt">
     <div class="programa-flex reverse">
         <div class="programa-img">
-            <img src="{{ asset('img-programas/' . ($imagenes['primaria']->imagen ?? 'primaria.jpg')) }}" alt="Primaria">
+            <img src="{{ $imagenes['primaria']->imagen ?? asset('imagen/primaria.jpg') }}" alt="Primaria">
             <div class="programa-img-badge">Nivel Primaria</div>
         </div>
         <div class="programa-content">
@@ -429,7 +429,7 @@ body { margin: 0; }
 <section id="secundaria" class="programa-section">
     <div class="programa-flex">
         <div class="programa-img">
-            <img src="{{ asset('img-programas/' . ($imagenes['secundaria']->imagen ?? 'secundaria.jpg')) }}" alt="Secundaria">
+            <img src="{{ $imagenes['secundaria']->imagen ?? asset('imagen/secundaria.jpg') }}" alt="Secundaria">
             <div class="programa-img-badge">Nivel Secundaria</div>
         </div>
         <div class="programa-content">
@@ -464,7 +464,7 @@ body { margin: 0; }
 <section id="psicopedagogia" class="programa-section alt">
     <div class="programa-flex reverse">
         <div class="programa-img">
-            <img src="{{ asset('img-programas/' . ($imagenes['psicopedagogia']->imagen ?? 'psicopedagogia.jpg')) }}" alt="Psicopedagogía">
+            <img src="{{ $imagenes['psicopedagogia']->imagen ?? asset('imagen/psicopedagogia.jpg') }}" alt="Psicopedagogía">
             <div class="programa-img-badge">Servicio</div>
         </div>
         <div class="programa-content">

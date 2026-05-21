@@ -2,12 +2,25 @@
 
 namespace App\Http\Controllers;
 use App\Models\ImagenPrograma;
-
 use Illuminate\Http\Request;
+use Cloudinary\Cloudinary;
 
 class ImagenProgramaController extends Controller
 {
-     public function index()
+    private function uploadToCloudinary($file)
+    {
+        $cloudinary = new Cloudinary([
+            'cloud' => [
+                'cloud_name' => env('CLOUDINARY_CLOUD_NAME'),
+                'api_key'    => env('CLOUDINARY_API_KEY'),
+                'api_secret' => env('CLOUDINARY_API_SECRET'),
+            ]
+        ]);
+        $result = $cloudinary->uploadApi()->upload($file->getRealPath());
+        return $result['secure_url'];
+    }
+
+    public function index()
     {
         $imagenes = ImagenPrograma::all()->keyBy('programa');
         return view('admin.imagenes', compact('imagenes'));
@@ -15,44 +28,30 @@ class ImagenProgramaController extends Controller
 
     public function update(Request $request, $programa)
     {
-         $request->validate([
-        'imagen' => 'required|image|mimes:jpeg,png,jpg,webp|max:4096',
-    ], [
-        'imagen.required' => '⚠️ Debes seleccionar una imagen.',
-        'imagen.image'    => '⚠️ El archivo debe ser una imagen.',
-    ]);
+        $request->validate([
+            'imagen' => 'required|image|mimes:jpeg,png,jpg,webp|max:4096',
+        ], [
+            'imagen.required' => '⚠️ Debes seleccionar una imagen.',
+            'imagen.image'    => '⚠️ El archivo debe ser una imagen.',
+        ]);
 
-    $img = ImagenPrograma::firstOrNew(['programa' => $programa]);
+        $img = ImagenPrograma::firstOrNew(['programa' => $programa]);
+        $img->imagen = $this->uploadToCloudinary($request->file('imagen'));
+        $img->save();
 
-    // Eliminar imagen anterior
-    if ($img->imagen && file_exists(public_path('img-programas/' . $img->imagen))) {
-        unlink(public_path('img-programas/' . $img->imagen));
+        return back()->with('success', 'Imagen de ' . ucfirst($programa) . ' actualizada correctamente.');
     }
 
-    // Guardar nueva imagen
-    $nombre = time() . '_' . uniqid() . '.' . $request->file('imagen')->getClientOriginalExtension();
-    $request->file('imagen')->move(public_path('img-programas'), $nombre);
-
-    $img->imagen = $nombre;
-    $img->save();
-
-    return back()->with('success', 'Imagen de ' . ucfirst($programa) . ' actualizada correctamente.');
-    }
     public function programas()
-{
-    $imagenes = ImagenPrograma::all()->keyBy('programa');
-    return view('programas', compact('imagenes'));
-}
-public function destroy($programa)
-{
-    $img = ImagenPrograma::where('programa', $programa)->firstOrFail();
-
-    if ($img->imagen && file_exists(public_path('img-programas/' . $img->imagen))) {
-        unlink(public_path('img-programas/' . $img->imagen));
+    {
+        $imagenes = ImagenPrograma::all()->keyBy('programa');
+        return view('programas', compact('imagenes'));
     }
 
-    $img->delete();
-
-    return back()->with('success', 'Imagen de ' . ucfirst($programa) . ' eliminada correctamente.');
-}
+    public function destroy($programa)
+    {
+        $img = ImagenPrograma::where('programa', $programa)->firstOrFail();
+        $img->delete();
+        return back()->with('success', 'Imagen de ' . ucfirst($programa) . ' eliminada correctamente.');
+    }
 }

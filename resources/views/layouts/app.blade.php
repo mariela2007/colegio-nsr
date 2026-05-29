@@ -337,7 +337,7 @@
 </div>
 
 <!-- WhatsApp flotante -->
-<a href="https://wa.me/51965067111?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20el%20colegio.%20Me%20gustar%C3%ADa%20conocer%20el%20proceso%20de%20matr%C3%ADcula%2C%20horarios%20y%20requisitos."
+<a href="https://wa.me/918457686?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20el%20colegio.%20Me%20gustar%C3%ADa%20conocer%20el%20proceso%20de%20matr%C3%ADcula%2C%20horarios%20y%20requisitos."
    class="whatsapp-float"
    target="_blank">
     <i class="fab fa-whatsapp"></i>
